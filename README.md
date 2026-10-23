@@ -177,6 +177,16 @@ The Part D routing pipeline makes an initial routing decision based exclusively 
 
 A cipher that completely defeats this classification pipeline is homophonic substitution (or a balanced polygraphic cipher such as Playfair). By mapping frequent plaintext letters to multiple distinct ciphertext symbols proportional to their frequency, homophonic substitution flattens letter frequencies to a near-uniform distribution (`IC ≈ 0.0385`). Consequently, the pipeline misidentifies the ciphertext as polyalphabetic and routes it to the Vigenère solver, failing to attempt monoalphabetic or transposition cryptanalysis.
 
+### Sample Pipeline Execution & Audit Trace
+
+Automated classification and key recovery pipeline execution over a polyalphabetic intercept (`cipher.txt`):
+
+```bash
+python attack.py --in cipher.txt --lang en
+```
+
+<img width="1153" height="280" alt="Captura de pantalla 2026-10-23 165525" src="https://github.com/user-attachments/assets/ae8142cf-680a-48d2-b91f-3d11d9babc44" />
+
 ---
 
 ## 10. Anything That Does Not Work, Stated Plainly
