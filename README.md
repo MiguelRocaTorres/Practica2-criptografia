@@ -24,7 +24,7 @@ python -m pytest -v
 
 Execution output:
 
-<img width="1580" height="226" alt="Captura de pantalla 2026-10-23 152849" src="https://github.com/user-attachments/assets/0b9961e2-f9f4-4a64-8f9f-81f801258f90" />
+<img width="1467" height="215" alt="Captura de pantalla 2026-10-23 163054" src="https://github.com/user-attachments/assets/73c487a1-bbec-4b25-b427-d344680fe7c2" />
 
 Individual test files can be executed separately:
 
