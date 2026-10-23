@@ -9,8 +9,8 @@ def index_of_coincidence(text: str) -> float:
     numerator = sum(c * (c - 1) for c in counts.values())
     return round(numerator/ (n * (n - 1)), 4)
 
-print(index_of_coincidence("CRYPTANALYSIS"))
-print(index_of_coincidence("THEINDEXOFCOINCIDENCE"))
+#print(index_of_coincidence("CRYPTANALYSIS"))
+#print(index_of_coincidence("THEINDEXOFCOINCIDENCE"))
 
 #SACADO DE WIKIPEDIA
 FREQS = {"en": {'A': 0.08167, 'B': 0.01492, 'C': 0.02782, 'D': 0.04253, 'E': 0.12702,
@@ -20,6 +20,7 @@ FREQS = {"en": {'A': 0.08167, 'B': 0.01492, 'C': 0.02782, 'D': 0.04253, 'E': 0.1
     'U': 0.02758, 'V': 0.00978, 'W': 0.02360, 'X': 0.00150, 'Y': 0.01974,
     'Z': 0.00074}}
 
+THRESHOLDS = 0.6
 
 def classify(ciphertext: str, language: str = "en") -> str:
     """Return "transposition" or "substitution"."""
@@ -32,4 +33,4 @@ def classify(ciphertext: str, language: str = "en") -> str:
     chi2 = sum(((counts[char] - n * p) ** 2) / (n * p) for char, p in probs.items())
     norm_chi2 = chi2 / n
 
-    return "transposition" if norm_chi2 < 0.6 else "substitution"
+    return "transposition" if norm_chi2 < THRESHOLDS else "substitution"
