@@ -1,5 +1,5 @@
 from measure import index_of_coincidence
-THRESHOLDS = 0.6
+THRESHOLDS = 0.055
 
 def coset_ic(ciphertext: str, m: int) -> float:
     cosets = [ciphertext[i::m] for i in range(m)]
